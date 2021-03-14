@@ -16,7 +16,7 @@ const CreatingCategories = ({isMapLatest, staticMap, updateMap, categories, addY
   const [active, setActive] = useState(null);
   const imageRef = useRef(null);
   const interactiveRef = useRef(null);
-  const [objectDetector,setObjectDetector] = useState(null);
+  const [detector,setObjectDetector] = useState(null);
 
   useEffect(() =>{
     window.ml5.objectDetector("yolo",{
@@ -61,7 +61,7 @@ const CreatingCategories = ({isMapLatest, staticMap, updateMap, categories, addY
 
   const evaluateImage = async ({ image }) => {
     let usergenerated = categories.filter(cat => cat.labels !== null);
-    let results = await objectDetector.detect(image);
+    let results = await detector.detect(image);
 
     //Get the top 4 results
     let lessResults = results.slice(-4);
@@ -258,7 +258,7 @@ const CreatingCategories = ({isMapLatest, staticMap, updateMap, categories, addY
       <div className="imageContainer">
         {(loading || labels === null) ? loadingScreen : formattedData(labels)}
         <div className="placeholder">
-          {isMapLatest && objectDetector !== null && (
+          {isMapLatest && detector !== null && (
             <img src={staticMap} alt="MapImage" onLoad={getModelResults} ref={imageRef}/>
           )}
         </div>

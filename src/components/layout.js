@@ -10,6 +10,7 @@ import "./site.css"
 import logo from "./logo.png"
 import Nav from "./nav"
 import SEO from "./SEO"
+import { Helmet } from "react-helmet"
 
 export default function Layout({children}) {
   const [activeName, setActiveName] = useState("#introduction");
@@ -31,7 +32,11 @@ export default function Layout({children}) {
 
   return (
   <React.Fragment>
-    <SEO />
+    <Helmet>
+      <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js" type="text/javascript" />
+      <script src="https://kit.fontawesome.com/e0cacda273.js" crossOrigin="anonymous"></script>
+    </Helmet>
+    {/* <SEO /> */}
     <header className={LayoutStyles.header}>
       <img src={logo} alt="Logo" />
       <h4>Unstable Label</h4>

@@ -148,6 +148,8 @@ export default function Home() {
       </ol>
 
       <h1 id="systemValues" className="toc">System <strike>Requirements</strike> Values</h1>
+      <StaticImage src="./images/general_sketch_doyung.png" alt="Sketch of Unstable Label" />
+      <figcaption>Illustration by <a href="https://doyung.art">Doyung Lee</a></figcaption>
       <p>There are three values that the Unstable Label has been built from, which can be seen as prerequisites for anyone planning on contributing and using the system. </p>
 
       <h3 id="situatedPerspective" className="toc">Situated Perspective</h3>
@@ -209,6 +211,7 @@ export default function Home() {
       <h1 id="navigatingYourData" className="toc">Navigating your Data</h1>
       <p>To contribute to the model, start by navigating through your chosen location in the Navigation Panel, looking for scenes within the cityscape that remind you of personal experiences: of stories that could never be captured by a camera; of shared memories that live in the minds of you and your friends; of mundane daily rituals; of the small things you notice during everyday life; of the things that you feel define your neighborhood and community.</p>
       <StaticImage src="./images/navigating_doyung_sketch.png"  alt="Sketch depicting navigating data" />
+      <figcaption>Illustration by <a href="https://doyung.art">Doyung Lee</a></figcaption>
       <p>Unstable Label intentionally looks at the city from the perspective of the street to ground the system in a personal look at the city. Walking through a neighborhood can be a form of exploring, and noticing the built environment.  Navigating through data in Unstable Label, whether it was from google street view or some other small scale data collection device, should feel similar -- like “walking” through the data. It slows you down, giving you the time to observe and reflect on the scene in front of you. </p>
       <h3 className="howto">Try it Yourself: </h3>
       <ol className="howto">
@@ -239,6 +242,7 @@ export default function Home() {
       <figcaption>RFID scanning robot at Sitterwerk, cataloging current categorization of books.</figcaption>
       <p>Building taxonomies and classification systems isn’t unique to machine learning systems. Commonly used library classification systems like the Library of Congress Subject Headings and the Dewey Decimal system have been extensively discussed as sites where knowledge and power intersect.<Footnote name="findsomething"/> There are many examples of libraries exploring alternative systems of categorization. One such example is <a href="https://www.sitterwerk.ch/En/Dynamische-Ordnung">Sitterwerk</a>, located in Switzerland, where patrons are encouraged to reorganize books as they like, with the ever shifting, collective categorization being catalogued by little scanning robots. </p>
       <StaticImage src="./images/creating_categories_doyung_sketch.png"  alt="Sketch of what category re-labeling looks like"/>
+      <figcaption>Illustration by <a href="https://doyung.art">Doyung Lee</a></figcaption>
       <p>Unstable Label builds from these examples of constantly changing categorization systems, applying it to a machine learning context. <mark>Every contributor in the system has to create their own categories, resulting in an ever expanding, but collectively defined model.</mark> Rather than having a categorization system created through the voting body of academics, Unstable Label envisions a participatory algorithm where contributors not only contribute data, but also towards the taxonomy that underlies that data.</p>
       <p>The categorization systems used in COCO and ImageNet represent what Kate Crawford has described as “a silently calculated public of assumed consensus and unchallenged values.”<Footnote name="agonisticalgorithm" /> Unstable Label creates the space to contest those values through a participatory process of category definition.</p>
       <h3 className="howto">Try it Yourself: </h3>
@@ -274,6 +278,7 @@ export default function Home() {
       <p>While metaphors pose data as an objective natural resource, the production of data will always be wrapped up in subjectivity. One reason why the term “drawing” is used to describe this particular production of data is to clearly convey that by making the choice to annotate something and not something else, you are explicitly bringing your values and worldview into the dataset and the resulting model. Many of the harms of data-driven technologies are caused by the “mythologization of data as pure and purifying,”<Footnote name="technologiesofspeculation2"/> for example providing the supposedly “objective” evidence to extend police narratives of “Blackness as criminal.”<Footnote name="stoplapdspying" /> Data-driven projects like predictive policing are reliant on visions of data as a purifying agent, natural force, or resource for consumption, because it obscures the human agency, ideology, and subjectivity that is actually behind the project.<Footnote name="dataiswhat" /></p>
       <h2> It’s crucial that projects like this that rely on the objectivity of data are dismantled, replaced instead with approaches oriented towards justice and equity, that understand data as a material this is formed, shaped, and created by people, and all their values, perspectives, and worldviews. </h2>
       <StaticImage src="./images/drawing_data_doyung_sketch.png"  alt="Sketch showing what the data drawing process would look like." />
+      <figcaption>Illustration by <a href="https://doyung.art">Doyung Lee</a></figcaption>
       <p>To reinforce these ideas of data, in Unstable Label, you are provided a free form drawing brush to create abstract shapes as bounding boxes. Bounding box annotations are conventionally used as a means to translate between people’s process of finding meaning within an image and a computer’s mathematical reading of that same image. The bounding box is defined by the pixel coordinates, which allows the machine learning algorithm to “learn” from the image.</p>
       <h3 className="howto">Try it Yourself: </h3>
       <ol className="howto">

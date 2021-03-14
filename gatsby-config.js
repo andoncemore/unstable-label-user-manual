@@ -27,7 +27,6 @@ module.exports = {
         display: `standalone`,
         icon: `src/components/logo_transparent.png`
       }
-    },
-    `gatsby-plugin-offline`
+    }
   ],
 }

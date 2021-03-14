@@ -46,8 +46,6 @@ function SEO() {
             }
         >
             <meta charset="utf-8" />
-            <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js" type="text/javascript" />
-            <script src="https://kit.fontawesome.com/e0cacda273.js" crossOrigin="anonymous"></script>
         </Helmet>
     )
 }

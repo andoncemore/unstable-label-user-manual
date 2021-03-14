@@ -140,7 +140,7 @@
         max-height: 90vh;
         overflow-y: scroll;
         overscroll-behavior: contain;
-        left: -70%;
+        left: -300px;
     }
 
     .content{

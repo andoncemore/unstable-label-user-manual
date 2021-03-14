@@ -64,7 +64,7 @@
     }
 
     .content{
-        grid-template-columns: [wide content-left] 1fr [content-right];
+        grid-template-columns: [wide content-left] minmax(0, 1fr) [content-right];
     }
 
     .navbar{
