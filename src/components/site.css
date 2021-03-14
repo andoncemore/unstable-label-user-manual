@@ -1,0 +1,290 @@
+/* CSS Reset */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size : 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin     : 0;
+    padding    : 0;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+}
+
+/* End CSS Reset */
+
+:root {
+    /* Sizes */
+    --font-size: 17px;
+    --unit: calc(var(--font-size)*0.5);
+    --body-padding-x: calc(var(--unit)*8);
+    --body-padding-y: calc(var(--unit)*8);
+    --row-gap: calc(var(--unit)*2);
+    --col-gap: calc(var(--unit)*8);
+    --article-max-width: calc(var(--unit)*136);
+
+    /* Colors */
+    --link-color     : #4154E8;
+    --minor-content  : #96979C;
+    --body-content   : #383943;
+    --highlight-color: #FFF399;
+    --green-gradient: linear-gradient(169.06deg, #52FFC1 0.62%, #73FD99 100.67%); 
+    --minor-background: #F1F1F1;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: var(--body-padding-y) var(--body-padding-x) 0  var(--body-padding-x);
+    font-size: var(--font-size);
+    font-family: 'IBM Plex Serif', sans-serif;
+    color: var(--body-content);
+    overflow-x: hidden;
+    counter-reset: footnotes;
+}
+
+h1:not(.interactive *){
+    font-weight: 700;
+    font-size: 2em;
+    font-family: 'Arial';
+    letter-spacing: -0.5px;
+    padding-top: calc(var(--unit)*4);
+}
+
+h2:not(.interactive *){
+    font-size: 1.25em;
+    font-family: 'Arial';
+    font-weight: 700;
+    color: var(--body-content);
+    padding: calc(var(--unit)*2);
+}
+
+h3:not(.interactive *){
+    font-weight: 600;
+    font-family: "Arial";
+    font-size: 1.3em;
+    padding-top: calc(var(--unit)*3);
+}
+
+p:not(.interactive *){
+    line-height: 1.75;
+    letter-spacing: 0.05px;
+}
+
+
+
+mark:not(.interactive *){
+    background: var(--highlight-color);
+    padding: 0 0.15em;
+}
+
+
+article ol:not(.interactive *){
+    display:block;
+    padding-left: 1.5em;
+    list-style: decimal;
+}
+
+article ul:not(.interactive *){
+    display: block;
+    padding-left: 1.5em;
+    list-style: disc;
+}
+
+article li:not(.interactive *){
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+article a:not(.interactive *){
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+article a:not(.interactive *):hover{
+    text-decoration: underline;
+}
+
+a[aria-describedby="footnote-label"]{
+    counter-increment: footnotes;
+    margin-left: 2px;
+    display: inline-block;
+    transition: transform 100ms ease-in-out;
+}
+
+a[aria-describedby="footnote-label"]:hover{
+    transform: scale(1.5);
+    text-decoration:none !important;
+}
+
+a[aria-describedby="footnote-label"]::after{
+    content: counter(footnotes);
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    border-radius: 2px;
+    background: #D9DDFC;
+    color: var(--link-color);
+    font-size: 0.8em;
+    font-weight:bold;
+    font-family: "Arial";
+}
+
+figcaption:not(.interactive *){
+    margin-top: calc(-1 * var(--row-gap) + 0.2em);
+    margin-bottom: 0.75em;
+    font-size: 0.8em;
+    color: var(--minor-content);
+}
+
+
+
+/* Image Styles */
+
+.wide{
+    grid-column: wide / content-right !important;
+}
+
+.wide + figcaption{
+    /* grid-column: wide / content-right; */
+}
+
+/* Custom Elements */
+
+p.small:not(.interactive *){
+    font-size:0.9em;
+}
+
+ol.small:not(.interactive *){
+    font-size:0.9em;
+}
+
+ol.small li:not(.interactive *){
+    margin-top: 0.3em;
+}
+
+.howto:not(.interactive *){
+    font-size: 1.1em;
+    color: var(--minor-content);
+}
+
+h3.howto:not(.interactive *){
+    font-size: 1.3em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+h3.howto:not(.interactive *)::before{
+    content: '';
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-right:8px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.85038 1.28174V2.54165H7.63296V11.3384H6.35203V12.5771H7.63296V13.858H8.89264V2.54165H11.391V1.28174H8.85038Z' fill='%2396979C'/%3E%3Cpath d='M17.6684 8.81927V7.58038H12.6507V2.54165L11.391 2.54165L11.391 10.0785H12.6507V8.84006H15.2119V10.0785H16.4715V8.84006H17.6684V11.3384H18.9281V10.0785H20.188V8.81927H17.6684Z' fill='%2396979C'/%3E%3Cpath d='M21.448 10.0785L20.188 10.0785L20.1881 16.4192H21.448V10.0785Z' fill='%2396979C'/%3E%3Cpath d='M18.8863 18.9387H17.6684V21.4579H10.1206V20.1772H8.89271V21.4579H8.87169V22.7178H18.9281V18.9387H20.1458V16.4192H18.8863V18.9387Z' fill='%2396979C'/%3E%3Cpath d='M8.89296 18.9388H7.63305V20.1772L8.89271 20.1772L8.89296 18.9388Z' fill='%2396979C'/%3E%3Cpath d='M7.63302 17.6788H6.37334V18.9388L7.63305 18.9388L7.63302 17.6788Z' fill='%2396979C'/%3E%3Cpath d='M5.11345 13.858H3.81174V15.1593H5.11345V13.858Z' fill='%2396979C'/%3E%3Cpath d='M6.37331 15.1592L5.11345 15.1593L5.1134 17.6788L6.37334 17.6788L6.37331 15.1592Z' fill='%2396979C'/%3E%3Cpath d='M3.8117 11.3384H2.55202V13.858L3.81174 13.858L3.8117 11.3384Z' fill='%2396979C'/%3E%3Cpath d='M6.33087 10.0785H3.81174L3.8117 11.3384L6.33087 11.3384V10.0785Z' fill='%2396979C'/%3E%3Cpath d='M12.6507 14.1938H11.391V17.616H12.6507V14.1938Z' fill='%2396979C'/%3E%3Cpath d='M15.1493 14.1938H13.8896V17.616H15.1493V14.1938Z' fill='%2396979C'/%3E%3Cpath d='M17.6684 15.0964H16.4085V17.616H17.6684V15.0964Z' fill='%2396979C'/%3E%3C/svg%3E");    /* background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.59 6.89C5.29 6.18 5.99 5.54 6.3 5.67C6.8 5.87 6.3 6.7 6 7.19C5.75 7.61 3.14 11.08 3.14 13.5C3.14 14.78 3.62 15.84 4.48 16.48C5.23 17.04 6.22 17.21 7.12 16.94C8.19 16.63 9.07 15.54 10.18 14.17C11.39 12.68 13.01 10.73 14.26 10.73C15.89 10.73 15.91 11.74 16.02 12.52C12.24 13.16 10.64 16.19 10.64 17.89C10.64 19.59 12.08 20.98 13.85 20.98C15.48 20.98 18.14 19.65 18.54 14.88H21V12.38H18.53C18.38 10.73 17.44 8.18 14.5 8.18C12.25 8.18 10.32 10.09 9.56 11.02C8.98 11.75 7.5 13.5 7.27 13.74C7.02 14.04 6.59 14.58 6.16 14.58C5.71 14.58 5.44 13.75 5.8 12.66C6.15 11.57 7.2 9.8 7.65 9.14C8.43 8 8.95 7.22 8.95 5.86C8.95 3.69 7.31 3 6.44 3C5.12 3 3.97 4 3.72 4.25C3.36 4.61 3.06 4.91 2.84 5.18L4.59 6.89ZM13.88 18.55C13.57 18.55 13.14 18.29 13.14 17.83C13.14 17.23 13.87 15.63 16.01 15.07C15.71 17.76 14.58 18.55 13.88 18.55Z" fill="#383943"/></svg>'); */
+}
+
+.warning{
+    padding: 1.5em;
+    background: var(--minor-background);
+    color: var(--minor-content);
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin: 0 1em;
+}
+
+.warning > h4{
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 1.2em;
+    margin-bottom: calc(var(--row-gap) * 0.75);
+}
+
+h3.comingsoon:not(.interactive *){
+    color: var(--minor-content);
+    font-style: italic;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+}
+
+h3.comingsoon:not(.interactive *)::after{
+    content:'coming soon';
+    color: var(--minor-content);
+    background: var(--minor-background);
+    font-size: 0.65em;
+    padding: 3px 4px;
+    margin-left: 6px;
+    border-radius: 2px;
+}
+
+.overlayFrameContainer{
+    grid-column: wide / content-right;
+    display: grid;
+    grid-template-columns: [wide] 125px [content-left] 1fr [content-right];
+    column-gap: var(--col-gap);
+    row-gap: var(--row-gap);
+    position: relative;
+}
+
+.overlayFrameContainer > *{
+    grid-column: content-left / content-right;
+}
+
+#interactive-exploring{
+    position: absolute;
+    grid-column: wide / content-right;
+    pointer-events: none;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+@media (max-width: 1024px){
+    :root{
+        --body-padding-y: calc(var(--unit)*4);
+        --body-padding-x: calc(var(--unit)*4);
+        --col-gap: calc(var(--unit)*2);
+    }
+}
+
+@media (max-width: 840px){
+    :root{
+        --body-padding-x: calc(var(--unit)*3);
+        --body-padding-y: calc(var(--unit)*2);
+    }
+    .overlayFrameContainer{
+        grid-template-columns: [wide content-left] 1fr [content-right];
+    }
+}

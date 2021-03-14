@@ -1,0 +1,93 @@
+#interactive-creating-categories .pending{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(255,0,0,0.6);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    z-index:2;
+    margin: 0 12px 12px 12px;
+}
+
+#interactive-creating-categories .pending .loader{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 8px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.9s infinite;
+    -webkit-animation: spin 0.9s infinite;
+    margin: 30px;
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+
+#interactive-creating-categories svg{
+    position: absolute;
+    width: calc(100% - 24px);
+    z-index: 1;
+
+}
+
+#interactive-creating-categories .labelOutline {
+    stroke: white;
+    stroke-width:4;
+    fill:none;
+    vector-effect: non-scaling-stroke;
+    stroke-linejoin: round;
+}
+
+#interactive-creating-categories .selectedShape{
+    stroke: var(--blue);
+    stroke-width:6;
+    fill:none;
+    vector-effect: non-scaling-stroke;
+    stroke-linejoin:round;
+}
+
+#interactive-creating-categories .textLabel{
+    position:absolute;
+    z-index:20;
+    color:red;
+    background: rgba(255,255,255,0.8);
+    font-size: 18px;
+    border-radius:2px;
+    padding: 0 4px;
+    transition: transform 150ms, background 100ms, color 100ms;
+    cursor:pointer;
+    
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#interactive-creating-categories .textLabel.invisible{
+    opacity: 0.5;
+}
+
+#interactive-creating-categories .textLabel:hover,
+#interactive-creating-categories .textLabel.active{
+  transform: scale(1.1);
+  background:var(--blue);
+  color:white;
+  z-index:21;
+}
+
+#interactive-creating-categories .textLabelContainer{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:20;
+}

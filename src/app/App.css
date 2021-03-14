@@ -1,0 +1,231 @@
+:root{
+    --background-light: #F5F5F5;
+    --background-dark: #8C8C8C;
+    --text-dark: #3E3E3E;
+    --text-medium: #939393;
+    --text-light: #C4C4C4;
+    --blue: #555CFF;
+    --red: #FF5353;
+    --green-teal: #52FFC1;
+    --green: #73FD99; 
+    --green-gradient: linear-gradient(169.06deg, #52FFC1 0.62%, #73FD99 100.67%);
+}
+
+.interactive{
+    font-family: 'Arial', sans-serif;
+    color: var(--text-dark);
+    padding: 2em 0 2em 0;
+}
+
+.interactive h1{
+    font-size: 18px;
+    margin     : 0;
+    padding    : 0;
+}
+
+.interactive h2{
+    font-size: 16px;
+    margin     : 0;
+    padding    : 0;
+}
+
+.interactive h3{
+    font-size: 13px;
+    margin     : 0;
+    padding    : 0;
+}
+
+.interactive h4{
+    font-size: 12px;
+    margin     : 0;
+    padding    : 0;
+}
+
+.interactive p.small{
+    font-weight:normal;
+    font-size: 10px;
+    margin     : 0;
+    padding    : 0;
+}
+
+.interactive p{
+    font-size: 13px;
+    font-weight:normal;
+    margin     : 0;
+    padding    : 0;
+}
+
+/* Button Styles */
+.interactive button {
+    font-family: Arial;
+    display: inline-block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: transform 150ms ease, box-shadow 150ms ease, border 150ms ease;
+}
+  
+.interactive button {
+    font-size: 11px;
+    line-height: 12px;
+    padding: 4px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background: var(--blue);
+    border: 2px solid var(--blue);
+    box-shadow: 2px 2px 0px rgba(85, 92, 255, 0.3);
+    color: white;
+}
+  
+.interactive button:hover,
+.interactive button:focus {
+    box-shadow: 3px 3px 0px rgba(85, 92, 255, 0.3);
+}
+  
+.interactive button:focus {
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+  
+.interactive button:active {
+    transform: scale(0.96);
+}
+  
+.interactive button:disabled {
+    background: #CBCBCB;
+    border: 2px solid #CBCBCB;
+    box-shadow: none;
+    font-style: italic;
+    color: var(--text-medium);
+}
+  
+.interactive button:disabled:active{
+    transform:none;
+}
+  
+.interactive button.large {
+    font-size: 13px;
+    line-height: 14px;
+    padding: 6px;
+}
+  
+.interactive button.gray {
+    background: var(--text-dark);
+    border: 2px solid var(--text-dark);
+    box-shadow: 2px 2px 0px rgba(38, 38, 38, 0.3);
+}
+  
+.interactive button.gray:hover,
+.interactive button.gray:focus {
+    box-shadow: 3px 3px 0px rgba(38, 38, 38, 0.3);
+}
+  
+.interactive button.gray:focus {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* For Creating Categories and Drawing Data */
+.editor{
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--main-color);
+    border-radius: 4px;
+    box-shadow: var(--main-shadow);
+    position:relative;
+}
+
+.editor > nav{
+    height: 42px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0 12px;
+    color: var(--main-text); 
+}
+
+.editor > nav > div{
+    display: flex;
+    align-items: center;
+}
+.editor > nav > div > *{
+    margin-right: 8px;
+}
+
+
+.editor .imageContainer{
+    padding: 0 12px 12px 12px;
+    position: relative;
+    
+}
+
+.editor .imageContainer .placeholder{
+    width: 100%;
+    padding-bottom: 100%;
+    position:relative;
+}
+
+.editor .imageContainer .placeholder img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    filter:grayscale(100%);
+}
+
+
+.editor .imageContainer img{
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.editor > nav h2{
+    color: var(--main-text);
+    font-weight:bold;
+    font-style: normal; 
+}
+
+#interactive-creating-categories .editor{
+    --main-color: var(--red);
+    --main-text: white;
+    --main-shadow: 6px 6px 0px rgba(255, 83, 83, 0.4);
+}
+
+#interactive-drawing-data .editor{
+    --main-color: var(--green-teal);
+    --main-text: var(--text-dark);
+    --main-shadow: 6px 6px 0px rgba(82, 255, 193, 0.3);
+}
+
+/* Dialog Box */
+.editor > .dialog{
+    position: absolute;
+    bottom:-50px;
+    right: 25px;
+    padding:0;
+    width:250px;
+    z-index:400;
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    background: white;
+    z-index: 2000 !important;
+
+}
+.editor > .dialog > .handle{
+    height: 18px;
+    background: var(--background-light);
+    border-radius: 4px 4px 0 0;
+    cursor: grab;
+    flex-shrink: 0;
+}
+
+.editor > .dialog > .handle:active{
+    cursor:grabbing;
+}

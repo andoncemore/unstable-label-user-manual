@@ -1,0 +1,36 @@
+#interactive-navigating{
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#interactive-navigating .filler{
+    padding-top: 100%;
+    width: 100%;
+}
+
+
+#interactive-navigating .streetView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#interactive-navigating .descriptionOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    pointer-events: none;
+}
+
+#interactive-navigating .descriptionOverlay h1{
+    text-align:center;
+    color:white;
+    margin-top: 12px;
+}

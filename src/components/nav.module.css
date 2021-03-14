@@ -1,0 +1,150 @@
+.list{
+    /* border: 1px solid black; */
+    padding-left: 16px;
+    padding-bottom: 2em;
+    display: block;
+    transition: left 500ms ease;
+}
+
+.tocSubtitle{
+    font-size: 0.8em;
+    margin-top:2em;
+    font-weight: bold;
+    font-family: "Arial";
+    margin-bottom: 0.5em;
+}
+
+.tocSubtitle:first-child{
+    margin-top: 0;
+}
+
+.list li > a,
+.list li > p{
+    text-decoration: none;
+    color: var(--minor-content);
+    padding: 0 4px;
+    border-radius: 3px;
+    transition: background 100ms ease-in-out, color 100ms ease-in-out;
+    line-height: 1.4;
+}
+
+.invalid{
+    opacity: 0.5;
+}
+
+.list li{
+    margin-bottom: 0.25em;
+}
+
+.list li > a:not(.invalid):hover,
+.list li >a.active{
+    background: var(--highlight-color);
+    color: var(--body-content);
+}
+
+.list ul ul{
+    margin-left: 1em;
+    font-size: 0.9em;
+    margin-top: 0.25em;
+}
+
+.button{
+    font-family: Arial;
+    display: inline-block;
+    border:none;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: transform 150ms ease, box-shadow 150ms ease, border 150ms ease;
+
+    font-size: 13px;
+    line-height: 14px;
+    padding: 6px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: bold;
+    /* background: var(--link-color); */
+    background: transparent;
+    border: 2px solid var(--body-content);
+    /* box-shadow: 3px 3px 0px rgba(85, 92, 255, 0.3); */
+    color: var(--body-content);
+    margin-top: 2em;
+}
+
+.button:hover,
+.button:focus {
+    /* box-shadow: 3px 3px 0px rgba(85, 92, 255, 0.3) */
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+}
+
+.button:active{
+    transform: scale(0.96)
+}
+
+.button.icon{
+    border:none;
+    font-size: 1em;
+    width: 30px;
+}
+
+.button.icon:hover,
+.button.icon:focus{
+    border:none;
+}
+
+.mobile{
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 8px 8px;
+    position: sticky;
+    top: 0;
+}
+
+.mobile .button{
+    margin: 0;
+}
+
+.mobile > div{
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.mobile h4{
+    font-family: 'Arial';
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 1em;
+}
+
+@media (max-width: 860px){
+    .mobile{
+        display: flex;
+    }
+    .list button{
+        display: none;
+    }
+
+    .list{
+        padding: 0.5em 2em 2em 1em;
+        position: absolute;
+        background: white;
+        max-height: 90vh;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+        left: -70%;
+    }
+
+    .content{
+        grid-template-columns: [wide content-left] 1fr [content-right];
+    }
+
+}

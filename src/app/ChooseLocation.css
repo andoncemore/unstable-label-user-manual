@@ -1,0 +1,39 @@
+#interactive-choose-location{
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#interactive-choose-location .filler{
+    padding-top: 100%;
+    width: 100%;
+}
+
+
+#interactive-choose-location .mapChooser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#interactive-choose-location input{
+    position:relative;
+    max-width: 300px;
+    width: 100%;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: var(--text-dark);
+    margin: 12px;
+    z-index:2;
+    border: 2px solid var(--minor-content);
+}
+
+#interactive-choose-location input:focus{
+    outline: none;
+    border: 2px solid rgba(70,70,255,0.4);
+}

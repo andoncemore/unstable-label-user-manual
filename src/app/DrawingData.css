@@ -1,0 +1,67 @@
+#interactive-drawing-data canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+#interactive-drawing-data svg{
+    position:absolute;
+    z-index:5;
+}
+
+#interactive-drawing-data svg .svglabel{
+    stroke-width: 6;
+}
+
+#interactive-drawing-data .connect path{
+    stroke-width: 0.4;
+    stroke-linecap: round;
+    stroke-dasharray: 1.5;
+}
+
+.createdLabel{
+    display:block;
+    position:absolute;
+    z-index:60;
+}
+
+.createdLabel h4{
+    display:inline-block;
+    padding: 5px 10px !important;
+    background: var(--background-light);
+    user-select:none;
+    cursor: grab;
+    margin-right:4px !important;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+    font-weight: bold;
+}
+
+.createdLabel h4:active{
+    cursor:grabbing;
+}
+
+.createdLabel.selected h4{
+    background: var(--green-gradient);
+    box-shadow: 2px 2px 0px rgba(82, 255, 193, 0.3);
+}
+
+.createdLabel p{
+    font-size: 11px;
+    font-weight:bold;
+    color: var(--green-teal);
+    opacity: 0.9;
+    margin-top:4px;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+}
+
+#interactive-drawing-data .imageContainer h1{
+    position:absolute;
+    bottom:40px;
+    left:20px;
+    z-index:10;
+    color:var(--green-teal);;
+    opacity:0.75;
+  }
