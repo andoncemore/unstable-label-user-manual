@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import CreateCategoriesDialog from './CreateCategoriesDialog';
 import HelpTip from "./HelpTip";
+import { Helmet } from "react-helmet"
 import './CreatingCategories.css';
 
 
@@ -237,6 +238,9 @@ const CreatingCategories = ({isMapLatest, staticMap, updateMap, categories, addY
 
   return(
     <div className="editor" ref={interactiveRef}>
+      <Helmet>
+        <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js" type="text/javascript" />
+      </Helmet>
       {active !== null && (
         <CreateCategoriesDialog
           relabel={active !== null ? labels[active].label : ""}
