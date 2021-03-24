@@ -60,7 +60,7 @@ img {
 body{
     min-height: 100vh;
     margin: 0 auto;
-    padding: var(--body-padding-y) var(--body-padding-x) 0  var(--body-padding-x);
+    padding: var(--body-padding-y) var(--body-padding-x) var(--body-padding-y)  var(--body-padding-x);
     font-size: var(--font-size);
     font-family: 'IBM Plex Serif', sans-serif;
     color: var(--body-content);
@@ -286,5 +286,11 @@ h3.comingsoon:not(.interactive *)::after{
     }
     .overlayFrameContainer{
         grid-template-columns: [wide content-left] 1fr [content-right];
+    }
+}
+
+@media (max-width: 400px){
+    :root{
+        --body-padding-x: calc(var(--unit)*1);
     }
 }
