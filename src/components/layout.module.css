@@ -3,6 +3,7 @@
     grid-template-columns: 125px 125px 1fr;
     max-width: calc(var(--article-max-width));
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .navbar{
